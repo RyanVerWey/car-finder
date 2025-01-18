@@ -1,0 +1,116 @@
+// Variables
+$primary-header-color: #ffffff;
+$subtext-color: #d3d3d3;
+$form-panel-bg-color: #f2f2f2;
+$form-blue: #348fbc;
+$form-disabled-color: #909090;
+$selected-option-color: #212121;
+$form-border-color: #e0e0e0;
+$font-family: "Open Sans", sans-serif;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Body Styling
+body {
+  font-family: $font-family;
+  background-image: url('../IMG/car-finder-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: $selected-option-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// Header Styling
+h1 {
+  color: $primary-header-color;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  color: $subtext-color;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+// Form Panel
+.car-finder {
+  width: 1200px;
+  height: auto;
+  min-height: 10rem;
+  max-width: 1000px;
+  background-color: $form-panel-bg-color;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  .form-section {
+    label {
+      &[for="year"],
+      &[for="make"],
+      &[for="model"] {
+        color: $form-blue;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: $selected-option-color;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid $form-border-color;
+  border-radius: 4px;
+  background-color: $form-panel-bg-color;
+  color: $selected-option-color;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+select:disabled {
+  background-color: $form-disabled-color;
+  color: $primary-header-color;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+
+// Form Section Layout
+.form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &:not(:last-child) {
+    border-right: 1px solid $form-border-color;
+    padding-right: 20px;
+  }
+
+  &:last-child {
+    padding-left: 20px;
+  }
+}
